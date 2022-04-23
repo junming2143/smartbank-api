@@ -31,7 +31,7 @@ public class RedeemptionHistoryServiceImpl implements RedeemptionHistoryService 
 		String message ="Item saved in history";
 		CCUser user = ccUserRepo.findById(historyDto.getCcNumber()).get();
 		user.setAvailableRedeemPoints(user.getAvailableRedeemPoints() - historyDto.getTotalPointsRedeemed());
-		user.setTotalRewardsGained(historyDto.getTotalAmountGained());
+		user.setTotalRewardsGained(user.getTotalRewardsGained() + historyDto.getTotalAmountGained());
 		ccUserRepo.save(user);
 		
 		historyDto.getItemsRedeemed().forEach(item ->{
