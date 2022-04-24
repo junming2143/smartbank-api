@@ -17,7 +17,7 @@ import com.axess.smartbankapi.exception.RecordNotFoundException;
 import com.axess.smartbankapi.service.RedeemptionHistoryService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/history")
 public class RedeemptionHistoryController {
 

@@ -14,6 +14,7 @@ import com.axess.smartbankapi.model.CCUser;
 import com.axess.smartbankapi.model.RewardsCatalogue;
 import com.axess.smartbankapi.service.CCUserService;
 import com.axess.smartbankapi.service.RewardCatalogueService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
 public class SmartBankApiApplication implements CommandLineRunner {
@@ -79,7 +80,7 @@ public class SmartBankApiApplication implements CommandLineRunner {
 
 		CCUser user = new CCUser();
 		user.setUserId("axess1");
-		user.setPassword("abc@123");
+		user.setPassword(encryptedPassword());
 		user.setUserName("Peter Hanks");
 		user.setCcName("Smart Bank Credit Card");
 		user.setCcNumber(123456789);
@@ -89,7 +90,7 @@ public class SmartBankApiApplication implements CommandLineRunner {
 		
 		user = new CCUser();
 		user.setUserId("axess2");
-		user.setPassword("abc@123");
+		user.setPassword(encryptedPassword());
 		user.setUserName("Harry Simson");
 		user.setCcName("Smart Bank Credit Card");
 		user.setCcNumber(123456799);
@@ -99,7 +100,7 @@ public class SmartBankApiApplication implements CommandLineRunner {
 		
 		user = new CCUser();
 		user.setUserId("axess3");
-		user.setPassword("abc@123");
+		user.setPassword(encryptedPassword());
 		user.setUserName("Tom Willis");
 		user.setCcName("Smart Bank Credit Card");
 		user.setCcNumber(123456889);
@@ -108,6 +109,12 @@ public class SmartBankApiApplication implements CommandLineRunner {
 		users.add(user);
 
 		return users;
+	}
+
+	private String encryptedPassword(){
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		String encodedPassword = passwordEncoder.encode("abc@123");
+		return encodedPassword;
 	}
 
 }

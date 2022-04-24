@@ -64,11 +64,9 @@ public class CCUserServiceImpl implements CCUserService {
 	}
 
 	@Override
-	public CCUser getLoginDetails(String userId, String password) throws RecordNotFoundException {
-
+	public CCUser getLoginDetails(String userId) throws RecordNotFoundException {
 		try {
-			Optional<CCUser> ccUser = this.ccUserRepo.findByUserIdAndPassword(userId, password);
-			return ccUser.get();
+			return ccUserRepo.findByUserId(userId);
 		} catch (NoSuchElementException e) {
 			throw new RecordNotFoundException("Invalid Credentials. Please check again.");
 		}

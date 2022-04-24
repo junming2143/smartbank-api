@@ -12,7 +12,7 @@ import com.axess.smartbankapi.model.CCUser;
 
 public interface CCUserService {
 	
-	CCUser getLoginDetails(String userId, String password) throws RecordNotFoundException;
+	CCUser getLoginDetails(String userId) throws RecordNotFoundException;
 	String saveUser(CCUser user) throws RecordExistException, RecordNotCreatedException;
 	List<CCUser> getAllUsers() throws RecordNotFoundException;
 	CCUser getUserById(long id) throws RecordNotFoundException;

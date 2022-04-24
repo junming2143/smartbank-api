@@ -10,11 +10,13 @@ com/axess/smartbankapi/exception/RecordNotFoundException.class
 com/axess/smartbankapi/repository/CCUserRepository.class
 com/axess/smartbankapi/controller/CCUserController.class
 com/axess/smartbankapi/config/restapi/GlobalApiExceptionHandler.class
+com/axess/smartbankapi/security/SpringSecurityConfiguration.class
 com/axess/smartbankapi/service/impl/RedeemptionHistoryServiceImpl.class
 com/axess/smartbankapi/exception/RecordNotCreatedException.class
 com/axess/smartbankapi/service/RedeemptionHistoryService.class
 com/axess/smartbankapi/exception/RecordNotDeletedException.class
 com/axess/smartbankapi/controller/HomeController.class
+com/axess/smartbankapi/security/CustomUserDetailsService.class
 com/axess/smartbankapi/model/CCUser.class
 com/axess/smartbankapi/controller/RedeemptionHistoryController.class
 com/axess/smartbankapi/controller/RewardsCatalogueController.class
@@ -26,4 +28,4 @@ com/axess/smartbankapi/config/SwaggerConfig.class
 com/axess/smartbankapi/config/restapi/ApiErrorResponse.class
 com/axess/smartbankapi/exception/RecordNotUpdatedException.class
 com/axess/smartbankapi/exception/RecordExistException.class
-com/axess/smartbankapi/dto/LoginDto.class
+com/axess/smartbankapi/security/CustomUserDetails.class
