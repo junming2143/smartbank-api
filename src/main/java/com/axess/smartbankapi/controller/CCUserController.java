@@ -5,33 +5,27 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.axess.smartbankapi.config.restapi.ApiSuccessResponse;
-import com.axess.smartbankapi.dto.LoginDto;
 import com.axess.smartbankapi.exception.RecordNotFoundException;
 import com.axess.smartbankapi.model.CCUser;
 import com.axess.smartbankapi.service.CCUserService;
 
 @RestController
 @RequestMapping("/ccuser")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 public class CCUserController {
 	
 	@Autowired
 	private CCUserService ccUserService;
 	
 	@PostMapping("/login")
-	public ResponseEntity<?> verifyLogin(@RequestBody LoginDto loginDto) throws RecordNotFoundException {
+	public ResponseEntity<?> verifyLogin(@RequestParam String userId) throws RecordNotFoundException {
 		
 		ApiSuccessResponse response = new ApiSuccessResponse();
 
-		CCUser loggedInUser = this.ccUserService.getLoginDetails(loginDto.getUserId(), loginDto.getPassword());
+		CCUser loggedInUser = this.ccUserService.getLoginDetails(userId);
 
 		response.setMessage("Login Verified successfully. " );
 		response.setHttpStatus(String.valueOf(HttpStatus.FOUND));

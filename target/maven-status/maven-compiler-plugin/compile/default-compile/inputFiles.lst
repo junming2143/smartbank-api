@@ -4,7 +4,6 @@
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/service/RedeemptionHistoryService.java
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/exception/RecordNotDeletedException.java
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/SmartBankApiApplication.java
-/Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/dto/LoginDto.java
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/controller/RedeemptionHistoryController.java
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/service/CCUserService.java
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/controller/HomeController.java
@@ -13,8 +12,11 @@
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/repository/RewardsCatalogueRepository.java
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/service/impl/RedeemptionHistoryServiceImpl.java
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/config/restapi/GlobalApiExceptionHandler.java
+/Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/security/CustomUserDetails.java
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/repository/RedeemptionHistoryRepository.java
+/Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/security/CustomUserDetailsService.java
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/service/RewardCatalogueService.java
+/Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/security/SpringSecurityConfiguration.java
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/exception/RecordNotCreatedException.java
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/model/CCUser.java
 /Users/junmingtan/Documents/scb_training/smartbank-api/src/main/java/com/axess/smartbankapi/config/SwaggerConfig.java
