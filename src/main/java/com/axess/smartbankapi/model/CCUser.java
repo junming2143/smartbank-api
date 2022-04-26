@@ -10,10 +10,20 @@ public class CCUser {
 	private long ccNumber;
 	private String ccName;
 	private String userName;
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	private String userId;
 	private String password;
 	private double availableRedeemPoints;
 	private double totalRewardsGained;
+	private String role;
 	public long getCcNumber() {
 		return ccNumber;
 	}

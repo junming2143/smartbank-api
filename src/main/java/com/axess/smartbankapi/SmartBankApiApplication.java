@@ -33,8 +33,8 @@ public class SmartBankApiApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		//LOGGER.info(this.userService.saveAllUsers(this.loadUsersData()));
-		//LOGGER.info(this.rcService.saveAllItems(this.loadCatalogueData()));
+		LOGGER.info(this.userService.saveAllUsers(this.loadUsersData()));
+		LOGGER.info(this.rcService.saveAllItems(this.loadCatalogueData()));
 
 	}
 	
@@ -86,6 +86,7 @@ public class SmartBankApiApplication implements CommandLineRunner {
 		user.setCcNumber(123456789);
 		user.setTotalRewardsGained(0);
 		user.setAvailableRedeemPoints(10000);
+		user.setRole("ROLE_USER");
 		users.add(user);
 		
 		user = new CCUser();
@@ -96,6 +97,7 @@ public class SmartBankApiApplication implements CommandLineRunner {
 		user.setCcNumber(123456799);
 		user.setTotalRewardsGained(0);
 		user.setAvailableRedeemPoints(10000);
+		user.setRole("ROLE_USER");
 		users.add(user);
 		
 		user = new CCUser();
@@ -106,6 +108,7 @@ public class SmartBankApiApplication implements CommandLineRunner {
 		user.setCcNumber(123456889);
 		user.setTotalRewardsGained(0);
 		user.setAvailableRedeemPoints(10000);
+		user.setRole("ROLE_ADMIN");
 		users.add(user);
 
 		return users;
