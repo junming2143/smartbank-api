@@ -14,7 +14,7 @@ import com.axess.smartbankapi.service.CCUserService;
 
 @RestController
 @RequestMapping("/ccuser")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 public class CCUserController {
 	
 	@Autowired
