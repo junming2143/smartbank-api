@@ -33,8 +33,8 @@ public class SmartBankApiApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		//LOGGER.info(this.userService.saveAllUsers(this.loadUsersData()));
-		//LOGGER.info(this.rcService.saveAllItems(this.loadCatalogueData()));
+		LOGGER.info(this.userService.saveAllUsers(this.loadUsersData()));
+		LOGGER.info(this.rcService.saveAllItems(this.loadCatalogueData()));
 
 	}
 	
