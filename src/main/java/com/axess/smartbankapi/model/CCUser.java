@@ -1,7 +1,11 @@
 package com.axess.smartbankapi.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 public class CCUser {
@@ -11,19 +15,23 @@ public class CCUser {
 	private String ccName;
 	private String userName;
 
-	public String getRole() {
-		return role;
-	}
 
-	public void setRole(String role) {
-		this.role = role;
-	}
 
 	private String userId;
 	private String password;
 	private double availableRedeemPoints;
+
+	public Collection<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Collection<Role> roles) {
+		this.roles = roles;
+	}
+
 	private double totalRewardsGained;
-	private String role;
+	@ManyToMany(fetch = FetchType.EAGER)
+	private Collection<Role> roles = new ArrayList<>();
 	public long getCcNumber() {
 		return ccNumber;
 	}

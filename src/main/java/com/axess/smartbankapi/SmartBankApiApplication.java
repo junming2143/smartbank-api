@@ -1,13 +1,18 @@
 package com.axess.smartbankapi;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
+import com.axess.smartbankapi.model.Role;
+import com.axess.smartbankapi.service.RoleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.axess.smartbankapi.model.CCUser;
@@ -25,6 +30,8 @@ public class SmartBankApiApplication implements CommandLineRunner {
 	private CCUserService userService;
 	@Autowired
 	private RewardCatalogueService rcService;
+	@Autowired
+	private RoleService roleService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SmartBankApiApplication.class, args);
@@ -32,10 +39,29 @@ public class SmartBankApiApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
+		LOGGER.info(this.roleService.saveAllRole(this.loadRolesData()));
 		LOGGER.info(this.userService.saveAllUsers(this.loadUsersData()));
 		LOGGER.info(this.rcService.saveAllItems(this.loadCatalogueData()));
 
+		userService.addRoleToUser("axess1", "ROLE_USER");
+		userService.addRoleToUser("axess2", "ROLE_USER");
+		userService.addRoleToUser("axess3", "ROLE_ADMIN");
+	}
+
+	private List<Role> loadRolesData(){
+		List<Role> rolelist = new ArrayList<>();
+
+		Role role = new Role();
+		role.setId(1L);
+		role.setName("ROLE_USER");
+		rolelist.add(role);
+
+		role = new Role();
+		role.setId(2L);
+		role.setName("ROLE_ADMIN");
+		rolelist.add(role);
+
+		return rolelist;
 	}
 	
 	private List<RewardsCatalogue> loadCatalogueData() {
@@ -86,7 +112,7 @@ public class SmartBankApiApplication implements CommandLineRunner {
 		user.setCcNumber(123456789);
 		user.setTotalRewardsGained(0);
 		user.setAvailableRedeemPoints(10000);
-		user.setRole("ROLE_USER");
+		user.setRoles(new ArrayList<>());
 		users.add(user);
 		
 		user = new CCUser();
@@ -97,7 +123,7 @@ public class SmartBankApiApplication implements CommandLineRunner {
 		user.setCcNumber(123456799);
 		user.setTotalRewardsGained(0);
 		user.setAvailableRedeemPoints(10000);
-		user.setRole("ROLE_USER");
+		user.setRoles(new ArrayList<>());
 		users.add(user);
 		
 		user = new CCUser();
@@ -108,7 +134,7 @@ public class SmartBankApiApplication implements CommandLineRunner {
 		user.setCcNumber(123456889);
 		user.setTotalRewardsGained(0);
 		user.setAvailableRedeemPoints(10000);
-		user.setRole("ROLE_ADMIN");
+		user.setRoles(new ArrayList<>());
 		users.add(user);
 
 		return users;

@@ -21,4 +21,6 @@ public interface CCUserService {
 	
 	String saveAllUsers(List<CCUser> users) throws RecordNotCreatedException;
 
+	void addRoleToUser(String userId, String roleName);
+
 }

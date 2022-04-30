@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
+import com.axess.smartbankapi.model.Role;
+import com.axess.smartbankapi.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,9 @@ public class CCUserServiceImpl implements CCUserService {
 
 	@Autowired
 	private CCUserRepository ccUserRepo;
+
+	@Autowired
+	private RoleRepository roleRepository;
 
 	@Override
 	public String saveUser(CCUser user) throws RecordExistException, RecordNotCreatedException {
@@ -82,6 +87,13 @@ public class CCUserServiceImpl implements CCUserService {
 			message = "Failed to save users - "+0;
 			throw new RecordNotCreatedException(message,e);
 		}
+	}
+
+	@Override
+	public void addRoleToUser(String userId, String roleName) {
+		CCUser ccUser = ccUserRepo.findByUserId(userId);
+		Role role = roleRepository.findByName(roleName);
+		ccUser.getRoles().add(role);
 	}
 
 }

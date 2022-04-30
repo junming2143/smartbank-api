@@ -2,6 +2,7 @@ com/axess/smartbankapi/service/impl/CCUserServiceImpl.class
 com/axess/smartbankapi/config/restapi/ApiSuccessResponse.class
 com/axess/smartbankapi/SmartBankApiApplication.class
 com/axess/smartbankapi/service/RewardCatalogueService.class
+com/axess/smartbankapi/model/Role.class
 com/axess/smartbankapi/service/impl/RewardCatalogueServiceImpl.class
 com/axess/smartbankapi/exception/ApplicationException.class
 com/axess/smartbankapi/dto/UserRedeemptionHistoryDto.class
@@ -20,12 +21,18 @@ com/axess/smartbankapi/security/CustomUserDetailsService.class
 com/axess/smartbankapi/model/CCUser.class
 com/axess/smartbankapi/controller/RedeemptionHistoryController.class
 com/axess/smartbankapi/controller/RewardsCatalogueController.class
+com/axess/smartbankapi/filter/CustomAuthenticationFilter.class
 com/axess/smartbankapi/service/CCUserService.class
 com/axess/smartbankapi/repository/RedeemptionHistoryRepository.class
+com/axess/smartbankapi/service/impl/RoleServiceImpl.class
 com/axess/smartbankapi/repository/RewardsCatalogueRepository.class
 com/axess/smartbankapi/model/RewardsCatalogue.class
 com/axess/smartbankapi/config/SwaggerConfig.class
 com/axess/smartbankapi/config/restapi/ApiErrorResponse.class
 com/axess/smartbankapi/exception/RecordNotUpdatedException.class
 com/axess/smartbankapi/exception/RecordExistException.class
+com/axess/smartbankapi/filter/CustomAuthorizationFilter.class
 com/axess/smartbankapi/security/CustomUserDetails.class
+com/axess/smartbankapi/controller/RefreshTokenController.class
+com/axess/smartbankapi/service/RoleService.class
+com/axess/smartbankapi/repository/RoleRepository.class
