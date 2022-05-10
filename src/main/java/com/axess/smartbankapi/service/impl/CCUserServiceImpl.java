@@ -18,8 +18,11 @@ import com.axess.smartbankapi.exception.RecordNotUpdatedException;
 import com.axess.smartbankapi.model.CCUser;
 import com.axess.smartbankapi.repository.CCUserRepository;
 import com.axess.smartbankapi.service.CCUserService;
+import org.springframework.transaction.annotation.Transactional;
+
 
 @Service
+@Transactional
 public class CCUserServiceImpl implements CCUserService {
 
 	@Autowired
