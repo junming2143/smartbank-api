@@ -39,13 +39,13 @@ public class SmartBankApiApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		//LOGGER.info(this.roleService.saveAllRole(this.loadRolesData()));
-		//LOGGER.info(this.userService.saveAllUsers(this.loadUsersData()));
-		//LOGGER.info(this.rcService.saveAllItems(this.loadCatalogueData()));
-
-		//userService.addRoleToUser("axess1", "ROLE_USER");
-		//userService.addRoleToUser("axess2", "ROLE_USER");
-		//userService.addRoleToUser("axess3", "ROLE_ADMIN");
+//		LOGGER.info(this.roleService.saveAllRole(this.loadRolesData()));
+//		LOGGER.info(this.userService.saveAllUsers(this.loadUsersData()));
+//		LOGGER.info(this.rcService.saveAllItems(this.loadCatalogueData()));
+//
+//		userService.addRoleToUser("axess1", "ROLE_USER");
+//		userService.addRoleToUser("axess2", "ROLE_USER");
+//		userService.addRoleToUser("axess3", "ROLE_ADMIN");
 	}
 
 	private List<Role> loadRolesData(){
